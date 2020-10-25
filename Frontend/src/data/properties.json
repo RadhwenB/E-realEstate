@@ -1,30 +1,39 @@
 [
   {
     "Id": 1,
+    "SellRent": 1,
     "Name": "Perle Noir",
     "Type": "House",
-    "Price": "122000"
+    "Price": "122000",
+    "ImageURL": "https://st.hzcdn.com/simgs/78911d5d054f6a63_14-9563/home-design.jpg"
   },
   {
     "Id": 2,
+    "SellRent": 1,
     "Name": "Bateaux",
     "Type": "Appartement",
-    "Price": "130000"
+    "Price": "130000",
+    "ImageURL": "https://p0.pikist.com/photos/207/825/house-architecture-palm-trees-outdoors-building-grass-apartment-exterior-colors.jpg"
   },
   {
     "Id": 3,
+    "SellRent": 2,
     "Name": "Rèves",
     "Type": "Studio",
-    "Price": "12000"
+    "Price": "12000",
+    "ImageURL": "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQMZG6PV2RbiEuvxQXRTtlB2V7ApXoUlRPUUQ&usqp=CAU"
   },
   {
     "Id": 4,
+    "SellRent": 2,
     "Name": "Perle",
     "Type": "House",
-    "Price": "122000"
+    "Price": "122000",
+    "ImageURL": "https://s3-production.bobvila.com/slides/26882/widened/two-tone-olive.jpg?1591229816"
   },
   {
     "Id": 5,
+    "SellRent": 2,
     "Name": "Perle Noir",
     "Type": "House",
     "Price": "122000"

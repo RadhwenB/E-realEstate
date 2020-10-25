@@ -1,6 +1,7 @@
 <div class="card">
   <div class="card-img-wrapper">
-    <img class="card-img-top" src="https://d2skuhm0vrry40.cloudfront.net/2020/articles/2020-03-19-14-22/animal-crossing-house-upgrades-expansions-costs-7018-1584627775997.jpg/EG11/resize/1200x-1/animal-crossing-house-upgrades-expansions-costs-7018-1584627775997.jpg">
+    <img *ngIf="property.ImageURL" class="card-img-top" src="{{property.ImageURL}}">
+    <img *ngIf="!property.ImageURL" class="card-img-top" src="https://cdn0.iconfinder.com/data/icons/houses-exterior/50/47-512.png">
     <ul class="list-inline text-center member-icon animate">
       <li class="list-inline-item">
         <button class="btn btn-primary" routerLink="/property-detail/{{property.Id}}" ><i class="far fa-edit"></i></button>
