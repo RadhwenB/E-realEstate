@@ -10,6 +10,7 @@ import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { HousingService } from './services/housing.service';
 import { AddPropertyComponent } from './property/add-property/add-property.component';
 import { PropertyDetailComponent } from './property/property-detail/property-detail.component';
+import {FormsModule} from '@angular/forms';
 
 const appRoutes: Routes =[
   {path: '', component: PropertyListComponent },
@@ -31,6 +32,7 @@ const appRoutes: Routes =[
   imports: [
     BrowserModule,
     HttpClientModule,
+    FormsModule,
     RouterModule.forRoot(appRoutes)
   ],
   providers: [HousingService],
