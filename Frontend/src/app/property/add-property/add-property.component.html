@@ -1,18 +1,18 @@
 <div class="row mb-5">
-  <div class="col-8">
+  <div class="col-8 shadow-lg p-0 bg-white">
     <div class="card">
       <div class="card-header">
         <h3>List your Property</h3>
       </div>
       <div class="card-body">
         <form (ngSubmit)='onSubmit()' #Form="ngForm">
-          <div>
-            <tabset #formTabs>
-              <tab heading="Basic Info">
+          <div class="tab-panel" >
+            <tabset class="member-tabset" #formTabs>
+              <tab heading="Basic Info" ngModelGroup="BasicInfo" #BasicInfo="ngModelGroup" >
                 <div class="form-group col-12">
                   <p></p>
                   <p>I want to </p>
-                  <div class="btn-group" btnRadioGroup>
+                  <div class="btn-group" btnRadioGroup ngModel name="SellRent" required>
                     <label class="btn btn-outline-primary mr-2" btnRadio=1 role="button" name="SellRent">Sell</label>
                     <label class="btn btn-outline-primary" btnRadio=2 role="button" name="SellRent">Rent</label>
                   </div>
@@ -21,7 +21,7 @@
                 <div class="form-group col-12">
                   <p></p>
                   <p>BHK</p>
-                  <div class="btn-group" btnRadioGroup>
+                  <div class="btn-group" btnRadioGroup [(ngModel)]="propertyView.BHK" name="BHK">
                     <label *ngFor="let bhk of [1,2,3,4]" class="btn btn-outline-primary mr-2" [btnRadio]="bhk" role="button" name="SellRent">{{bhk}}</label>
                   </div>
                 </div>
@@ -29,7 +29,8 @@
                 <div class="form-group col-12">
                   <p></p>
                   <p>Property Type</p>
-                  <div class="btn-group" btnRadioGroup name="propType" [(ngModel)]="propertyView.Type">
+                  <div class="btn-group" btnRadioGroup name="propType"
+                  [(ngModel)]="propertyView.PType">
                     <label *ngFor="let ptype of propertyTypes"
                     class="btn btn-outline-primary mr-2"
                     [btnRadio]="ptype" role="button"
@@ -40,7 +41,7 @@
                 <div class="form-group col-12">
                   <p></p>
                   <p>Furnished Type</p>
-                  <div class="btn-group" btnRadioGroup>
+                  <div class="btn-group" btnRadioGroup [(ngModel)]="propertyView.FType" name="FType">
                     <label *ngFor="let ftype of furnishTypes" class="btn btn-outline-primary mr-2" [btnRadio]="ftype" role="button" name="SellRent">{{ftype}}</label>
                   </div>
                 </div>
@@ -61,14 +62,14 @@
                 </div>
 
 
-                <div class="form-group col-12">
+                <div class="form-group col-12"  >
                   <label>City</label>
-                  <input type="text" class="form-control">
+                  <input type="text" class="form-control" [(ngModel)]="propertyView.City" name="City">
                 </div>
 
                 <div class="form-group col-12">
                     <button type="button" class="btn btn-primary btn-block"
-                    (click)="selectTab(1)">Next</button>
+                    (click)="selectTab(1)" [disabled]="!BasicInfo.valid" >Next</button>
                 </div>
               </tab>
 
@@ -88,13 +89,13 @@
                     <input type="text" class="form-control">
                   </div>
 
-                  <div class="form-group col-12">
-                    <label>Built Area (in Sqr Feet)</label>
-                    <input type="text" class="form-control">
+                  <div class="form-group col-12" >
+                    <label>Built Area (in m²)</label>
+                    <input type="text" class="form-control" [(ngModel)]="propertyView.BuiltArea" name="BuildArea">
                   </div>
 
                   <div class="form-group col-12">
-                    <label>Carpet Area(in Sqr Feet)</label>
+                    <label>Carpet Area(in m²)</label>
                     <input type="text" class="form-control">
                   </div>
 
@@ -214,8 +215,8 @@
     <div class="card-header">
       <h3>Your Property Preview</h3>
     </div>
-    <div>
-      <app-property-card [property]="propertyView"></app-property-card>
+    <div class="shadow-lg p-3 bg-white" >
+      <app-property-card [property]="propertyView" hideIcons="true" ></app-property-card>
     </div>
   </div>
 </div>
